@@ -1,13 +1,50 @@
 @import "normalise";
+@import "typography";
 
-body {
-    overflow: hidden;
-}
+body {background-color: #ffffff}
 
 .container {
+    background-color: #fffefb;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     margin: 0 auto;
+    padding: 25px 15px;
     box-sizing: border-box;
     height: 100vh;
     max-width: 550px;
-    border: 2px solid black;
+    text-align: center;
+    border-left: 1px solid $black;
+    border-right: 1px solid $black;
 }
+
+.weather-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: 80px;
+    div {
+        align-self: end;
+        p {display: inline}
+    }
+}
+
+.degrees {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-self: end;
+}
+
+.day {
+    height: 90px;
+    border-right: 1px solid $black;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.day:last-child {border: none}

@@ -8,6 +8,7 @@
     <title>Weather App</title>
 
     <!-- STYLESHEET -->
+    
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -15,12 +16,50 @@
 <body>
 
     <div class="container">
-        <h2>Leeds, UK</h2>
-        <h1>30&#176;</h1>
+        <header>
+            <h2>Leeds, UK</h2>
+            <div class="weather-stats">
+                <div class="weather-stat-quarter"><i class="fab fa-font-awesome-flag"></i><p> 22mph</p></div>
+                <div class="weather-stat-quarter"><i class="fas fa-tint"></i><p> 20%</p></div>
+                <div class="weather-stat-quarter"><i class="fas fa-umbrella"></i><p> 25%</p></div>
+                <div class="weather-stat-quarter"><i class="fas fa-cloud fa-4x"></i></div>
+            </div>
+        </header>
+        <div class="degrees">
+                <h1 class="centered">20</h1>
+                <span>&#176;</span>
+            </div>
+        <div class="days">
+            <div class="day">
+                <h3>MON</h3>
+                <i class="fas fa-cloud fa-lg"></i>
+                <h4>18&#176;</h4>
+            </div>
+            <div class="day">
+                <h3>TUE</h3>
+                <i class="fas fa-cloud fa-lg"></i>
+                <h4>18&#176;</h4>
+            </div>
+            <div class="day">
+                <h3>WED</h3>
+                <i class="fas fa-cloud fa-lg"></i>
+                <h4>18&#176;</h4>
+            </div>
+            <div class="day">
+                <h3>THU</h3>
+                <i class="fas fa-cloud fa-lg"></i>
+                <h4>18&#176;</h4>
+            </div>
+            <div class="day">
+                <h3>FRI</h3>
+                <i class="fas fa-cloud fa-lg"></i>
+                <h4>18&#176;</h4>
+            </div>
+        </div>
     </div>
 
 </body>
-
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <!-- JAVASCRIPT -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
