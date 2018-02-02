@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var endPoint = 'http://api.openweathermap.org/data/2.5/forecast?';
+    var endPoint = '//api.openweathermap.org/data/2.5/forecast?';
     var lat = 'lat=' + '53.707105';
     var lon = '&lon=' + '-1.243742';
     var APIKey = 'APPID=' + '1f3e30098d59daa0ee84d36dca533728';
