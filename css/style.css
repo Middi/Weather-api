@@ -33,3 +33,14 @@ input, select {
 
 a:focus, button:focus {
   outline: none; }
+
+body {
+  overflow: hidden; }
+
+.container {
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100vh;
+  max-width: 550px;
+  border: 2px solid black; }

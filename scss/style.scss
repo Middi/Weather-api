@@ -1,1 +1,13 @@
 @import "normalise";
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 100vh;
+    max-width: 550px;
+    border: 2px solid black;
+}
