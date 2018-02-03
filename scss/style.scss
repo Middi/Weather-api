@@ -36,7 +36,8 @@ body {background-color: #ffffff}
     border: 1px solid $black;
     border-radius: 4px;
     overflow: hidden;
-    background-color: $white;
+    background-color: #ccc;
+    p {color: #888}
 }
 
 .button {
@@ -48,10 +49,9 @@ body {background-color: #ffffff}
     }
 }
 
-.button:first-child {
-    background-color: #ccc;
-    p {color: #888;
-        }
+.button-active {
+    background-color: $white;
+    p {color: $black}
 }
 
 

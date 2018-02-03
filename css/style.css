@@ -52,7 +52,7 @@ h1 {
   font-size: 16rem; }
 
 h2 {
-  font-size: 1.5rem; }
+  font-size: 1.8rem; }
 
 h4 {
   font-size: 1.4rem; }
@@ -168,7 +168,9 @@ body {
   border: 1px solid #373A40;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #fffefb; }
+  background-color: #ccc; }
+  .buttons p {
+    color: #888; }
 
 .button {
   height: 28px;
@@ -177,10 +179,10 @@ body {
   .button p {
     font-weight: 600; }
 
-.button:first-child {
-  background-color: #ccc; }
-  .button:first-child p {
-    color: #888; }
+.button-active {
+  background-color: #fffefb; }
+  .button-active p {
+    color: #373A40; }
 
 .degrees {
   display: grid;
