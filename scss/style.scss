@@ -11,8 +11,6 @@ img {
 
 .container {
     background-color: $white;
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
     margin: 0 auto;
     padding: 25px 5px;
     box-sizing: border-box;
@@ -20,54 +18,12 @@ img {
     max-width: 550px;
     text-align: center;
     box-shadow: 0 0 8px 0px #aaa;
-}
-
-.weather-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    height: 150px;
-    div {
-        align-self: center;
-        p {display: inline}
-        img {
-            height: 60px;
-            width: auto;
-        }
-    }
+    grid-template-rows: 25% 50% 25%;
 }
 
-.buttons {
-    display: grid;
-    margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
-    width: 84px;
-    border: 1px solid $black;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #ccc;
-    p {color: #888}
-}
-
-.button {
-    height: 28px;
-    line-height: 28px;
-    cursor: pointer;
-    p {
-        font-weight: 600;
-    }
-}
-
-.button-active {
-    background-color: $white;
-    p {color: $black}
-}
-
-
-.degrees {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    margin-left: 1.5rem;
+.icon-main {
+    height: 80px;
 }
 
 .days {

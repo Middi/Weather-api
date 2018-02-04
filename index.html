@@ -8,7 +8,7 @@
     <title>Weather App</title>
 
     <!-- STYLESHEET -->
-    
+
     <link href="css/style.css" rel="stylesheet">
 
 </head>
@@ -17,56 +17,45 @@
 
     <div class="container">
 
-        <header>
-            <h2 id="city"></h2>
-            <div class="weather-stats">
-                <div class="weather-stat-quarter"><i class="fab fa-font-awesome-flag"></i><p id="wind"></p></div>
-                <div class="weather-stat-quarter"><i class="fas fa-tint"></i><p id="humid"></p></div>
-                <div class="weather-stat-quarter"><p id="desc"></p></div>
-                <div class="weather-stat-quarter">
-                    <img id="icon" src="" alt="icon">
-                </div>
-            </div>
-            <div class="buttons">
-                <div class="button button-active" id="c-deg"><p>&#8451;</p></div>
-                <div class="button" id="f-deg"><p>&#8457;</p></div>
-            </div>
-        </header>
-        
+        <h2 id="city"></h2>
+
         <div class="day degrees">
-                <h1 class="day-temp" id="temp"></h1>
+            <img class="icon icon-main" src="" alt="icon">
+            <h1 class="day-temp" id="temp"></h1>
+            <p id="desc"></p>
         </div>
+
         <div class="days">
             <div class="day">
                 <h3 class="date"></h3>
-                <img class="day-icon" src="" alt="icon">
+                <img class="icon" src="" alt="icon">
                 <h4 class="day-temp"></h4>
             </div>
             <div class="day">
                 <h3 class="date"></h3>
-                <img class="day-icon" src="" alt="icon">
+                <img class="icon" src="" alt="icon">
                 <h4 class="day-temp"></h4>
             </div>
             <div class="day">
                 <h3 class="date"></h3>
-                <img class="day-icon" src="" alt="icon">
+                <img class="icon" src="" alt="icon">
                 <h4 class="day-temp"></h4>
             </div>
             <div class="day">
                 <h3 class="date"></h3>
-                <img class="day-icon" src="" alt="icon">
+                <img class="icon" src="" alt="icon">
                 <h4 class="day-temp"></h4>
             </div>
             <div class="day">
                 <h3 class="date"></h3>
-                <img class="day-icon" src="" alt="icon">
+                <img class="icon" src="" alt="icon">
                 <h4 class="day-temp"></h4>
             </div>
         </div>
     </div>
 
 </body>
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
 <!-- JAVASCRIPT -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 

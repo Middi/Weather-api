@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   -moz-osx-font-smoothing: grayscale; }
 
 p {
+  font-size: 1.2rem;
   font-weight: 500; }
 
 h1 {
@@ -59,10 +60,6 @@ h4 {
 
 .weather-stat-quarter {
   color: #373A40; }
-
-.deg-symbol {
-  font-size: 6rem;
-  margin-left: -1.2rem; }
 
 .toggle {
   width: 5rem;
@@ -142,8 +139,6 @@ img {
 
 .container {
   background-color: #fffefb;
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
   margin: 0 auto;
   padding: 25px 5px;
   -webkit-box-sizing: border-box;
@@ -152,52 +147,12 @@ img {
   max-width: 550px;
   text-align: center;
   -webkit-box-shadow: 0 0 8px 0px #aaa;
-          box-shadow: 0 0 8px 0px #aaa; }
-
-.weather-stats {
+          box-shadow: 0 0 8px 0px #aaa;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  height: 150px; }
-  .weather-stats div {
-    -ms-flex-item-align: center;
-        align-self: center; }
-    .weather-stats div p {
-      display: inline; }
-    .weather-stats div img {
-      height: 60px;
-      width: auto; }
+  grid-template-rows: 25% 50% 25%; }
 
-.buttons {
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  width: 84px;
-  border: 1px solid #373A40;
-  border-radius: 4px;
-  overflow: hidden;
-  background-color: #ccc; }
-  .buttons p {
-    color: #888; }
-
-.button {
-  height: 28px;
-  line-height: 28px;
-  cursor: pointer; }
-  .button p {
-    font-weight: 600; }
-
-.button-active {
-  background-color: #fffefb; }
-  .button-active p {
-    color: #373A40; }
-
-.degrees {
-  display: grid;
-  grid-template-columns: auto auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-left: 1.5rem; }
+.icon-main {
+  height: 80px; }
 
 .days {
   display: grid;
@@ -213,5 +168,5 @@ img {
       -ms-flex-align: center;
           align-items: center; }
 
-.day:last-child {
+.days .day:last-child {
   border: none; }
