@@ -8,6 +8,9 @@ $(document).ready(function () {
         var longitude = pos.coords.longitude;
         weather(latitude, longitude);
     }
+    function error(error) {
+        console.log(error);
+    }
 
     // Call Weather
     function weather(latitude, longitude) {
