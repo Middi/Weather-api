@@ -15,30 +15,24 @@ $(document).ready(function () {
     var celsius = true;
 
     function weather(latitude, longitude) {
-        var lat = 'lat=' + latitude;
-        var lon = '&lon=' + longitude;
-        var endPoint = 'http://api.openweathermap.org/data/2.5/forecast/daily?';
         var APIKey = 'APPID=' + '76c3222b05bd5fe6e2f602b4591b0aec';
         var settings = '&units=metric&';
-        var URL = endPoint + lat + lon + settings + APIKey;
+        var URL = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude + settings + APIKey}`;
 
         $.getJSON(URL, (data) => {
             updateDOM(data);
-            console.log(data);
         });
     }
 
     // Update DOM
     function updateDOM(data) {
         var city = data.city.name + ', ' + data.city.country;
-        var temp = Math.round(data.list[0].temp.day);
         var wind = data.list[0].speed;
         var humid = data.list[0].humidity;
         var desc = data.list[0].weather[0].description;
         var icon = 'http://openweathermap.org/img/w/10d.png';
 
         $('#city').html(city);
-        $('#temp').html(temp);
         $('#wind').html(' ' + wind + 'mph');
         $('#humid').html(' ' + humid + '%');
         $('#desc').html(' ' + desc);
@@ -46,13 +40,12 @@ $(document).ready(function () {
         console.log(data);
 
         $('.day').each(function (i, day) {
-            var dayIcon = data.list[i + 1].weather[0].icon;
-
+            var dayIcon = data.list[i].weather[0].icon;
             var today = new Date().getTime();
-            var hours = new Date(today + ((i + 1) * 86400000));
+            var hours = new Date(today + ((i) * 86400000));
 
             $(day).find('.date').html(hours.toString().split(' ')[0]);
-            $(day).find('.day-temp').html(Math.round(data.list[i + 1].temp.day) + '&#176;');
+            $(day).find('.day-temp').html(Math.round(data.list[i].temp.day) + '&#176;');
             $(day).find('.day-icon').attr('src', 'http://openweathermap.org/img/w/' + dayIcon + '.png');
         });
     }

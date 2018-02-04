@@ -204,7 +204,7 @@ img {
   grid-template-columns: repeat(5, 1fr);
   align-self: end; }
 
-.day {
+.days .day {
   height: 90px;
   border-right: 1px solid #373A40;
   display: grid;

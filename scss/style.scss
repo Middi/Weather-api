@@ -76,7 +76,7 @@ img {
     align-self: end;
 }
 
-.day {
+.days .day {
     height: 90px;
     border-right: 1px solid $black;
     display: grid;
@@ -84,4 +84,4 @@ img {
     align-items: center;
 }
 
-.day:last-child {border: none}
+.days .day:last-child {border: none}
