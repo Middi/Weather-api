@@ -15,9 +15,8 @@ $(document).ready(function () {
 
     // Call Weather
     function weather(latitude, longitude) {
-        var APIKey = 'APPID=' + '76c3222b05bd5fe6e2f602b4591b0aec';
-        var settings = '&units=metric&';
-        var URL = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude + settings + APIKey}`;
+        var APIKey = '76c3222b05bd5fe6e2f602b4591b0aec';
+        var URL = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&units=metric&APPID=${APIKey}`;
 
         $.getJSON(URL, (data) => {
             updateDOM(data);
@@ -42,13 +41,13 @@ $(document).ready(function () {
         // 5 Day Loop
         for (var i = 1; i < 6; i++) {
             var today = new Date().getTime();
-            var nextDay = new Date(today + ((i) * 86400000));
+            var nextDay = new Date(today + ((i) * 86400000)).toString().split(' ')[0];
             var icon = data.list[i].weather[0].icon;
             var temp = Math.round(data.list[i].temp.day);
 
             $('#days').append(`
                 <div class="day">
-                <h3>${nextDay.toString().split(' ')[0]}</h3>
+                <h3>${nextDay}</h3>
                 <img class="icon" src="http://openweathermap.org/img/w/${icon}.png" alt="icon">
                 <h4 class="day-temp">${temp}</h4>
                 </div>
