@@ -8,6 +8,7 @@ $(document).ready(function () {
         var longitude = pos.coords.longitude;
         weather(latitude, longitude);
     }
+
     function error(error) {
         console.log(error);
     }
@@ -26,20 +27,33 @@ $(document).ready(function () {
     // Update DOM
     function updateDOM(data) {
         // Main Data
-        var city = data.city.name + ', ' + data.city.country;
+        var city = data.city.name;
         var desc = data.list[0].weather[0].description;
+        var icon = data.list[0].weather[0].icon;
+        var temp = Math.round(data.list[0].temp.day);
         $('#city').html(city);
         $('#desc').html(' ' + desc);
+        $('#icon-main').attr('src', `http://openweathermap.org/img/w/${icon}.png`);
+        $('#temp-main').html(temp + '&#176;');
 
-        // Looped Data
-        $('.day').each(function (i, day) {
-            var icon = data.list[i].weather[0].icon;
+
+
+
+        // 5 Day Loop
+        for (var i = 1; i < 6; i++) {
             var today = new Date().getTime();
-            var hours = new Date(today + ((i) * 86400000));
+            var nextDay = new Date(today + ((i) * 86400000));
+            var icon = data.list[i].weather[0].icon;
+            var temp = Math.round(data.list[i].temp.day);
 
-            $(day).find('.date').html(hours.toString().split(' ')[0]);
-            $(day).find('.day-temp').html(Math.round(data.list[i].temp.day) + '&#176;');
-            $(day).find('.icon').attr('src', 'http://openweathermap.org/img/w/' + icon + '.png');
-        });
+            $('#days').append(`
+                <div class="day">
+                <h3>${nextDay.toString().split(' ')[0]}</h3>
+                <img class="icon" src="http://openweathermap.org/img/w/${icon}.png" alt="icon">
+                <h4 class="day-temp">${temp}</h4>
+                </div>
+            `);
+        }
+
     }
 });
