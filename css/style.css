@@ -136,6 +136,10 @@ h4 {
 body {
   background-color: #ffffff; }
 
+img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); }
+
 .container {
   background-color: #fffefb;
   display: grid;
@@ -153,16 +157,19 @@ body {
 .weather-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 80px; }
+  height: 150px; }
   .weather-stats div {
-    -ms-flex-item-align: end;
-        align-self: end; }
+    -ms-flex-item-align: center;
+        align-self: center; }
     .weather-stats div p {
       display: inline; }
+    .weather-stats div img {
+      height: 60px;
+      width: auto; }
 
 .buttons {
   display: grid;
-  margin: 25px auto;
+  margin: 0 auto;
   grid-template-columns: repeat(2, 1fr);
   width: 84px;
   border: 1px solid #373A40;

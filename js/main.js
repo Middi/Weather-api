@@ -4,7 +4,7 @@ $(document).ready(function () {
     var endPoint = '//api.openweathermap.org/data/2.5/forecast?';
     var lat = 'lat=' + '53.707105';
     var lon = '&lon=' + '-1.243742';
-    var APIKey = 'APPID=' + '1f3e30098d59daa0ee84d36dca533728';
+    var APIKey = 'APPID=' + '76c3222b05bd5fe6e2f602b4591b0aec';
     var settings = '&units=metric&';
 
     var URL = endPoint + lat + lon + settings + APIKey;
@@ -23,15 +23,25 @@ $(document).ready(function () {
         var wind = data.list[0].wind.speed;
         var humid = data.list[0].main.humidity;
         var desc = data.list[0].weather[0].description;
+        var icon = 'http://openweathermap.org/img/w/10d.png';
 
         $('#city').html(city);
         $('#temp').html(temp);
         $('#wind').html(' ' + wind + 'mph');
         $('#humid').html(' ' + humid + '%');
         $('#desc').html(' ' + desc);
+        $('#icon').attr('src', icon);
+        console.log(data);
 
-        $('.day-temp').each(function (i, day) {
-            $(day).html(Math.round(data.list[i].main.temp) + '&#176;');
+        $('.day').each(function (i, day) {
+            var dayIcon = data.list[i+1].weather[0].icon;
+
+            var today = new Date().getTime();
+            var hours = new Date(today + ((i+1) * 86400000));
+
+            $(day).find('.date').html(hours.toString().split(' ')[0]);
+            $(day).find('.day-temp').html(Math.round(data.list[i+1].main.temp) + '&#176;');
+            $(day).find('.day-icon').attr('src', 'http://openweathermap.org/img/w/' + dayIcon + '.png');
         });
     }
 
@@ -67,5 +77,8 @@ $(document).ready(function () {
             celsius = false;
         }
     });
+
+    // Dates
+
 
 });

@@ -4,6 +4,10 @@
 
 body {background-color: #ffffff}
 
+img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
 
 .container {
     background-color: $white;
@@ -21,16 +25,20 @@ body {background-color: #ffffff}
 .weather-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    height: 80px;
+    height: 150px;
     div {
-        align-self: end;
+        align-self: center;
         p {display: inline}
+        img {
+            height: 60px;
+            width: auto;
+        }
     }
 }
 
 .buttons {
     display: grid;
-    margin: 25px auto;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     width: 84px;
     border: 1px solid $black;
