@@ -1,21 +1,32 @@
 $(document).ready(function () {
 
+    navigator.geolocation.getCurrentPosition(success, error);
+
+    function success(pos) {
+        var latitude = pos.coords.latitude;
+        var longitude = pos.coords.longitude;
+        weather(latitude, longitude);
+    }
+
+    function error() {
+        console.log('error');
+    }
+
     var celsius = true;
-    var endPoint = '//api.openweathermap.org/data/2.5/forecast/daily?';
-    var lat = 'lat=' + '53.707105';
-    var lon = '&lon=' + '-1.243742';
-    var APIKey = 'APPID=' + '76c3222b05bd5fe6e2f602b4591b0aec';
-    var settings = '&units=metric&';
 
-    var URL = endPoint + lat + lon + settings + APIKey;
+    function weather(latitude, longitude) {
+        var lat = 'lat=' + latitude;
+        var lon = '&lon=' + longitude;
+        var endPoint = 'http://api.openweathermap.org/data/2.5/forecast/daily?';
+        var APIKey = 'APPID=' + '76c3222b05bd5fe6e2f602b4591b0aec';
+        var settings = '&units=metric&';
+        var URL = endPoint + lat + lon + settings + APIKey;
 
-    function weather() {
         $.getJSON(URL, (data) => {
             updateDOM(data);
             console.log(data);
         });
     }
-    weather();
 
     // Update DOM
     function updateDOM(data) {
@@ -35,13 +46,13 @@ $(document).ready(function () {
         console.log(data);
 
         $('.day').each(function (i, day) {
-            var dayIcon = data.list[i+1].weather[0].icon;
+            var dayIcon = data.list[i + 1].weather[0].icon;
 
             var today = new Date().getTime();
-            var hours = new Date(today + ((i+1) * 86400000));
+            var hours = new Date(today + ((i + 1) * 86400000));
 
             $(day).find('.date').html(hours.toString().split(' ')[0]);
-            $(day).find('.day-temp').html(Math.round(data.list[i+1].temp.day) + '&#176;');
+            $(day).find('.day-temp').html(Math.round(data.list[i + 1].temp.day) + '&#176;');
             $(day).find('.day-icon').attr('src', 'http://openweathermap.org/img/w/' + dayIcon + '.png');
         });
     }
