@@ -1,16 +1,26 @@
-@import "normalise";
-@import "typography";
-@import "toggle";
+html {font-size: 16px}
 
-body {background-color: #ffffff}
-
-img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+h1, h2, h3, h4, h5, h6, p, span {
+    font-family: Helvetica, sans-serif;
+    color: #373A40;
+    font-weight: 600;
+    margin: 0;
 }
 
+p {font-size: 1.2rem}
+
+h1 {font-size: 16rem}
+
+h2 {font-size: 2rem}
+
+h4 {font-size: 1.4rem}
+
+
+body {margin: 0}
+
+img {filter: grayscale(100%)}
+
 .container {
-    background-color: $white;
     margin: 0 auto;
     padding: 25px 5px;
     box-sizing: border-box;
@@ -19,12 +29,10 @@ img {
     text-align: center;
     box-shadow: 0 0 8px 0px #aaa;
     display: grid;
-    grid-template-rows: 25% 50% 25%;
+    grid-template-rows: 20% 50% 30%;
 }
 
-.icon-main {
-    height: 80px;
-}
+.icon-main {height: 80px}
 
 .days {
     display: grid;
@@ -34,10 +42,9 @@ img {
 
 .days .day {
     height: 90px;
-    border-right: 1px solid $black;
+    border-right: 1px solid #373A40;;
     display: grid;
     justify-items: center;
-    align-items: center;
 }
 
 .days .day:last-child {border: none}

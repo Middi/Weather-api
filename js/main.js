@@ -31,7 +31,7 @@ $(document).ready(function () {
         var icon = data.list[0].weather[0].icon;
         var temp = Math.round(data.list[0].temp.day);
         $('#city').html(city);
-        $('#desc').html(' ' + desc);
+        $('#desc-main').html(' ' + desc);
         $('#icon-main').attr('src', `http://openweathermap.org/img/w/${icon}.png`);
         $('#temp-main').html(temp + '&#176;');
 
